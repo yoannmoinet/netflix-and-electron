@@ -1,0 +1,15 @@
+{
+  "name": "test_netflix",
+  "version": "1.0.0",
+  "description": "Test Netflix usage in Electron",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yoannmoinet",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.8.4"
+  }
+}

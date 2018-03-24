@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <style>
+            html,
+            body,
+            webview {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .buttons {
+                display: flex;
+                position: fixed;
+                top: 0;
+
+            }
+        </style>
+    </head>
+    <body>
+        <webview
+            id="webview"
+            src="https://www.netflix.com/ProfilesGate"
+            webpreferences="plugins, nodeIntegration=0"
+            partition="persist:fenetre"
+            style="display:none"
+        ></webview>
+        <div class="buttons">
+            <button id="netflix" class="button">Go To Netflix</button>
+            <button id="shaka" class="button">Go To Shaka</button>
+            <button id="bitmovin" class="button">Go To BitMovin</button>
+        </div>
+        <script>
+            console.log(process.versions, navigator.plugins);
+            const urls = {
+                netflix: 'https://www.netflix.com/ProfilesGate',
+                shaka: 'https://shaka-player-demo.appspot.com/',
+                bitmovin: 'https://bitmovin.com/mpeg-dash-hls-drm-test-player/'
+            };
+
+            const webview = document.getElementById('webview');
+            const buttons = document.querySelectorAll('.button');
+
+            const openUrl = (url) => {
+                webview.src = url;
+                webview.style.display = 'flex';
+            };
+
+            buttons.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    openUrl(urls[btn.id]);
+                });
+            });
+
+        </script>
+    </body>
+</html>
