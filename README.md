@@ -1,4 +1,4 @@
-# Electorn and DRM
+# Electron and DRM
 
 I'm trying to load DRM content in Electorn using Widevine plugin.
 
